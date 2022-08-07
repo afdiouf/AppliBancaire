@@ -1,0 +1,317 @@
+{
+	"info": {
+		"_postman_id": "1ad62859-63a2-46a9-944a-a7adc5457fb8",
+		"name": "Collection TestAppBancaire",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllClients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/clients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateClient",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"nom\": \"Al Hamdou Fassar DIOUF\",\r\n    \"email\": \"afdiouf@gmail.com\",\r\n    \"password\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/clients/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"clients",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getClient",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"nom\": \"Zeyna NDOUR\",\r\n    \"email\": \"zeyna@gmail.com\",\r\n    \"password\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/clients/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"clients",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createClient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"nom\": \"Zeyna NDOUR\",\r\n    \"email\": \"zeyna@gmail.com\",\r\n    \"password\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/clients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteClient",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/clients/15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"clients",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllComptes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/comptes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"comptes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consulterCompte",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/consulterCompte?codeCompte=c1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"consulterCompte"
+					],
+					"query": [
+						{
+							"key": "codeCompte",
+							"value": "c1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "effectuerVersement",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/saveOperation?codeCompte=c2&montant=2000&typeOperation=VERS&codeCompte2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"saveOperation"
+					],
+					"query": [
+						{
+							"key": "codeCompte",
+							"value": "c2"
+						},
+						{
+							"key": "montant",
+							"value": "2000"
+						},
+						{
+							"key": "typeOperation",
+							"value": "VERS"
+						},
+						{
+							"key": "codeCompte2",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "effectuerRetrait",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/saveOperation?codeCompte=c2&montant=1111&typeOperation=RETR&codeCompte2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"saveOperation"
+					],
+					"query": [
+						{
+							"key": "codeCompte",
+							"value": "c2"
+						},
+						{
+							"key": "montant",
+							"value": "1111"
+						},
+						{
+							"key": "typeOperation",
+							"value": "RETR"
+						},
+						{
+							"key": "codeCompte2",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "effectuerVirement",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/saveOperation?codeCompte=c1&codeCompte2=c2&montant=1111&typeOperation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"saveOperation"
+					],
+					"query": [
+						{
+							"key": "codeCompte",
+							"value": "c1"
+						},
+						{
+							"key": "codeCompte2",
+							"value": "c2"
+						},
+						{
+							"key": "montant",
+							"value": "1111"
+						},
+						{
+							"key": "typeOperation",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listOperations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/listOperations?codeCompte=c1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"listOperations"
+					],
+					"query": [
+						{
+							"key": "codeCompte",
+							"value": "c1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
